@@ -12,7 +12,7 @@ function App() {
   const [convertedValue, setConvertedValue] = useState(0)
 
   useEffect(() => {
-    document.title = `UruCambio - UYU a ${currency[0].currency}`
+    document.title = `UruCambio `;
   }, [ currency ])
   
   useEffect(() => {
