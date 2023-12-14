@@ -52,12 +52,18 @@ function App() {
 
   const handleExchange = (e) => {
     setValue(e.target.value)
-    setConvertedValue(e.target.value / ((currency[0].rate.buy + currency[0].rate.sell) / 2))
+    currency &&
+      setConvertedValue(
+        e.target.value / ((currency[0].rate.buy + currency[0].rate.sell) / 2)
+      );
   }
 
   const handleExchangeInvert = (e) => {
     setConvertedValue(e.target.value)
-    setValue(e.target.value * ((currency[0].rate.buy + currency[0].rate.sell) / 2))
+    currency &&
+      setValue(
+        e.target.value * ((currency[0].rate.buy + currency[0].rate.sell) / 2)
+      );
 
   }
 
