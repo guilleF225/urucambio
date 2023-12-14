@@ -28,12 +28,13 @@ function App() {
       }
     })
     setExchangesArray(array)
-    setCurrency(array.filter((exchange) => {
-      if (exchange.currency === 'USD') {
-        return exchange
-      }
-    }))
-    console.log(exchangesArray)
+    setCurrency(
+      array.filter((exchange) => {
+        if (exchange.currency === "USD") {
+          return exchange;
+        }
+      })
+    );
   }, [exchanges])
 
   const handleChange = (e) => {
