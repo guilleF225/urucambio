@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   const [exchanges, setExchanges] = useState([])
   const [exchangesArray, setExchangesArray] = useState()
-  const [currency, setCurrency] = useState(null)
+  const [currency, setCurrency] = useState([{ rate: { buy: 0, sell: 0 } }]);
   const [value, setValue] = useState(0)
   const [convertedValue, setConvertedValue] = useState(0)
 
@@ -59,12 +59,11 @@ function App() {
   }
 
   const handleExchangeInvert = (e) => {
-    setConvertedValue(e.target.value)
+    setConvertedValue(e.target.value);
     currency &&
       setValue(
         e.target.value * ((currency[0].rate.buy + currency[0].rate.sell) / 2)
       );
-
   }
 
   return (
